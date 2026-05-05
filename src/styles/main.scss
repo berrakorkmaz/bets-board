@@ -1,0 +1,32 @@
+@use './base/variables' as *;
+@use './base/mixins' as *;
+
+@use './components/matchTable';
+@use './components/betSlip';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  background: $color-bg;
+  color: $color-text;
+}
+
+.app {
+  min-height: 100vh;
+  padding: $space-6;
+}
+
+.app__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) $bet-slip-width;
+  gap: $space-5;
+  align-items: start;
+
+  @include respond-tablet {
+    grid-template-columns: 1fr;
+  }
+}

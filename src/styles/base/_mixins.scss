@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+@mixin respond-mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin respond-tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+@mixin button-reset {
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

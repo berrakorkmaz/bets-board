@@ -1,0 +1,86 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.bet-slip {
+  @include card;
+
+  position: sticky;
+  top: $space-6;
+  padding: $space-2;
+
+  &__title {
+    margin: 0 0 $space-4;
+    font-size: $font-size-sm;
+  }
+
+  &__empty {
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+  }
+
+  &__item {
+    padding: $space-2;
+    margin-bottom: $space-2;
+    border-radius: $radius-md;
+    background: $color-surface-light;
+  }
+
+  &__match {
+    margin: 0 0 $space-2;
+    font-weight: 700;
+  }
+
+  &__market {
+    margin: 0 0 $space-2;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+  }
+
+  &__odd {
+    margin: 0 0 $space-2;
+    color: $color-primary;
+    font-weight: 700;
+  }
+
+  &__remove,
+  &__clear {
+    @include button-reset;
+
+    padding: $space-2;
+    border-radius: $radius-sm;
+    background: transparent;
+    color: $color-text-muted;
+    border: 1px solid $color-border;
+
+    &:hover {
+      color: $color-danger;
+      border-color: $color-danger;
+    }
+  }
+
+  &__footer {
+    padding-top: $space-4;
+    border-top: 1px solid $color-border;
+  }
+
+  &__total {
+    margin: 0 0 $space-3;
+    font-size: $font-size-sm;
+    font-weight: 700;
+  }
+
+  @include respond-tablet {
+    position: static;
+  }
+
+  @include respond-mobile {
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    margin-top: $space-5;
+    border-radius: $radius-lg $radius-lg 0 0;
+    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.35);
+    max-height: 45vh;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,145 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.match-table {
+  @include card;
+
+  width: 100%;
+  overflow: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 980px;
+  }
+
+  th,
+  td {
+    padding: $space-2;
+    text-align: left;
+    font-size: $font-size-xs;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+  }
+
+  th {
+    color: $color-text-muted;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  td {
+    color: $color-text;
+  }
+
+  &__odd {
+    @include button-reset;
+
+    min-width: 45px;
+    padding: $space-1;
+    border-radius: $radius-sm;
+    background: $color-surface-light;
+    color: $color-text;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $color-primary-dark;
+      transform: translateY(-1px);
+    }
+
+    &.selected {
+      background: $color-primary;
+      color: $color-bg;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.4);
+      transform: scale(1.05);
+    }
+  }
+}
+
+.match-cards {
+  display: none;
+}
+
+@include respond-mobile {
+  .match-table {
+    display: none;
+  }
+
+  .match-cards {
+    display: grid;
+    gap: $space-4;
+  }
+
+  .match-card {
+    @include card;
+    padding: $space-4;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      gap: $space-3;
+      color: $color-text-muted;
+      font-size: $font-size-xs;
+      margin-bottom: $space-3;
+    }
+
+    &__title {
+      margin: 0 0 $space-2;
+      font-size: $font-size-md;
+    }
+
+    &__status {
+      margin: 0 0 $space-4;
+      color: $color-primary;
+      font-size: $font-size-xs;
+      font-weight: 700;
+    }
+
+    &__market {
+      margin-top: $space-4;
+    }
+
+    &__market-title {
+      margin: 0 0 $space-2;
+      color: $color-text-muted;
+      font-size: $font-size-xs;
+      font-weight: 600;
+    }
+
+    &__odds {
+      display: grid;
+      gap: $space-2;
+    }
+
+    &__odd {
+      @include button-reset;
+      display: flex;
+      flex-direction: column;
+      gap: $space-1;
+      padding: $space-3;
+      border-radius: $radius-md;
+      background: $color-surface-light;
+      color: $color-text;
+      font-weight: 600;
+
+      span {
+        color: $color-text-muted;
+        font-size: $font-size-xs;
+      }
+
+      strong {
+        font-size: $font-size-md;
+      }
+
+      &.selected {
+        background: $color-primary;
+        color: $color-bg;
+
+        span {
+          color: $color-bg;
+        }
+      }
+    }
+  }
+}
