@@ -143,3 +143,22 @@
     }
   }
 }
+
+.match-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+}
+
+.match-search__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: $font-size-md;
+  background: transparent;
+  color: $color-text;
+}

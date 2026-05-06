@@ -5,6 +5,7 @@ import { fetchBets } from './features/matches/matchesSlice';
 import MatchTable from './components/MatchTable';
 import BetSlip from './components/BetSlip';
 import { getMarketColumns, normalizeMatch } from './utils/betMappers';
+import TableSkeleton from './components/TableSkeleton';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,8 +23,23 @@ function App() {
     return data.map(normalizeMatch);
   }, [data]);
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
+
+  if (loading) {
+    return (
+      <div className="app">
+        <header className="app__header">
+          <h1>Bülten</h1>
+        </header>
+
+        <div className="app__layout">
+          <main className="app__content">
+            <TableSkeleton />
+          </main>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">
