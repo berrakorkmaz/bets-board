@@ -1,6 +1,12 @@
 export const getMarketColumns = (matches) => {
   const marketMap = new Map();
 
+  const DEFAULT_MARKET_LABELS = {
+    1: ['1', 'X', '2'],
+    2: ['1-X', '1-2', 'X-2'],
+    5: ['Alt', 'Üst'],
+  };
+
   matches.forEach((match) => {
     Object.values(match.OCG || {}).forEach((market) => {
       if (!marketMap.has(market.ID)) {
@@ -21,7 +27,8 @@ export const getMarketColumns = (matches) => {
 
   return Array.from(marketMap.values()).map((market) => ({
     ...market,
-    labels: Array.from(market.labels.values()),
+    labels:
+      DEFAULT_MARKET_LABELS[market.id] || Array.from(market.labels.values()),
   }));
 };
 

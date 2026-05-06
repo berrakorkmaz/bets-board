@@ -30,11 +30,7 @@ const betSlipSlice = createSlice({
       }
 
       state.selections = state.selections.filter(
-        (selection) =>
-          !(
-            selection.matchId === selectedOdd.matchId &&
-            selection.marketId === selectedOdd.marketId
-          ),
+        (selection) => selection.matchId !== selectedOdd.matchId,
       );
 
       state.selections.push(selectedOdd);
