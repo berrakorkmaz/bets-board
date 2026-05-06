@@ -15,9 +15,8 @@ React ve Redux Toolkit kullanılarak geliştirilmiş responsive bir spor bahis b
 - Search/filter özelliği
 - Infinite scroll yapısı
 - Skeleton loading ekranı
-- Responsive desktop/mobile layout
-- Desktop için board/table yapısı
-- Mobile için card yapısı
+- Desktop için board layout
+- Mobile için card layout
 - LocalStorage ile kupon verisinin tutulması
 - Unit test desteği
 
