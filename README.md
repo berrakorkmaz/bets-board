@@ -18,6 +18,8 @@ React ve Redux Toolkit kullanılarak geliştirilmiş responsive bir spor bahis b
 - Responsive desktop/mobile layout
 - Desktop için board/table yapısı
 - Mobile için card yapısı
+- LocalStorage ile kupon verisinin tutulması
+- Unit test desteği
 
 ---
 
@@ -37,14 +39,15 @@ React ve Redux Toolkit kullanılarak geliştirilmiş responsive bir spor bahis b
 - Redux Toolkit
 - Axios
 - Webpack
-- Sass
+- SCSS
+- Babel
 - Jest / React Testing Library
 
 ---
 
 ## Tasarım
 
-UI tasarımı oluşturulurken Google Stitch (AI) referans alınmış, geliştirme süreci manuel olarak React bileşenleriyle uygulanmıştır.
+UI tasarımı oluşturulurken Google Stitch (AI) referans alınmış, geliştirme süreci manuel olarak uygulanmıştır.
 
 ---
 

@@ -12,7 +12,7 @@ const BetSlip = () => {
   const selections = useSelector((state) => state.betSlip.selections);
 
   const totalOdds = selections.reduce(
-    (total, selection) => total * Number(selection.value),
+    (total, selection) => total * Number(selection.value || 1),
     1,
   );
 

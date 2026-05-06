@@ -74,7 +74,7 @@ const MatchTable = ({ matches, marketColumns }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [filteredMatches.length]);
+  }, [filteredMatches]);
 
   const isSelected = (selectionId) =>
     selections.some((selection) => selection.selectionId === selectionId);

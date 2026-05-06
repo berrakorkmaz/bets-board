@@ -53,7 +53,7 @@ const betSlipSlice = createSlice({
     clearSelections: (state) => {
       state.selections = [];
 
-      saveToStorage(STORAGE_KEY);
+      saveToStorage(STORAGE_KEY, []);
     },
   },
 });
