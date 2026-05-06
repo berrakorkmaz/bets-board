@@ -69,6 +69,7 @@ const MatchTable = ({ matches, marketColumns }) => {
         });
       }
     };
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -172,15 +173,12 @@ const MatchTable = ({ matches, marketColumns }) => {
                 {match.date} - {match.time}
               </span>
             </div>
-
             <h3 className="match-card__title">{match.matchName}</h3>
-
             <p className="match-card__status">{match.status}</p>
 
             {marketColumns.map((market) => (
               <div key={market.id} className="match-card__market">
                 <p className="match-card__market-title">{market.name}</p>
-
                 <div className="match-card__odds">
                   {market.labels.map((label) => {
                     const odd = match.oddsByMarket[market.id]?.[label];

@@ -30,7 +30,6 @@ function App() {
       <header className="app__header">
         <h1>Bülten</h1>
       </header>
-
       <div className="app__layout">
         <main className="app__content">
           {loading ? (

@@ -60,5 +60,4 @@ const betSlipSlice = createSlice({
 
 export const { addSelection, removeSelection, clearSelections } =
   betSlipSlice.actions;
-
 export default betSlipSlice.reducer;

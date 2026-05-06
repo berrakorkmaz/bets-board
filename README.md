@@ -8,6 +8,12 @@ React ve Redux Toolkit kullanılarak geliştirilmiş responsive bir spor bahis b
 
 ---
 
+## Live Demo
+
+https://bets-board.vercel.app/
+
+---
+
 ## Özellikler
 
 - Axios ile API'den veri çekme
